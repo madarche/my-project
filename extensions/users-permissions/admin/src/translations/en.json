@@ -97,6 +97,7 @@
   "PopUpForm.Providers.twitch.providerConfig.redirectURL": "The redirect URL to add in your Twitch application configurations",
   "PopUpForm.Providers.twitter.providerConfig.redirectURL": "The redirect URL to add in your Twitter application configurations",
   "PopUpForm.Providers.vk.providerConfig.redirectURL": "The redirect URL to add in your VK application configurations",
+  "PopUpForm.Providers.myoidc.providerConfig.redirectURL": "The redirect URL to add in your MyOIDC application configurations",
   "PopUpForm.button.cancel": "Cancel",
   "PopUpForm.button.save": "Save",
   "PopUpForm.header.add.providers": "Add New Provider",

@@ -73,6 +73,8 @@ class PopUpForm extends React.Component {
         return `${strapi.backendURL}/connect/vk/callback`;
       case 'twitch':
         return `${strapi.backendURL}/connect/twitch/callback`;
+      case 'myoidc':
+        return `${strapi.backendURL}/connect/myoidc/callback`;
       default: {
         const value = get(this.props.values, 'callback', '');
 
