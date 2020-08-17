@@ -385,41 +385,41 @@ const getProfile = async (provider, query, callback) => {
         });
       break;
     }
-    case 'myoidc': {
-      const myoidc = purest({
-        provider: 'myoidc',
-        config: {
-          myoidc: {
-            'https://myoidc.local.test/': {
-              __domain: {
-                auth: {
-                  auth: { bearer: '[0]' },
-                },
+  case 'myoidc': {
+    const myoidc = purest({
+      provider: 'myoidc',
+      config: {
+        myoidc: {
+          'https://myoidc.local.test': {
+            __domain: {
+              auth: {
+                auth: { bearer: '[0]' },
               },
-              '{endpoint}': {
-                __path: {
-                  alias: '__default',
-                },
+            },
+            '{endpoint}': {
+              __path: {
+                alias: '__default',
               },
             },
           },
         },
-      });
+      },
+    });
 
-      myoidc
-        .query('oauth')
-        .get('me')
-        .qs({ access_token })
-        .request((err, res, body) => {
-          if (err) {
-            callback(err);
-          } else {
-            callback(null, {
-              username: body.email.split('@')[0],
-              email: body.email,
-            });
-          }
-        });
+    myoidc
+      .query()
+      .get('me')
+      .qs({ access_token })
+      .request((err, res, body) => {
+        if (err) {
+          callback(err);
+        } else {
+          callback(null, {
+            username: body.email.split('@')[0],
+            email: body.email,
+          });
+        }
+      });
 
       break;
     }
