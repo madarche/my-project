@@ -101,6 +101,13 @@ module.exports = async () => {
       secret: '',
       callback: `${strapi.config.server.url}/auth/myoidc/callback`,
       scope: ['openid', 'email'],
+      // Needed properties when the provider is not one of Grant predefined providers
+      authorize_url: "https://myoidc.local.test/auth",
+      access_url: "https://myoidc.local.test/token",
+      oauth: 2,
+      scope_delimiter: " ",
+      nonce: true,
+      token_endpoint_auth_method: "client_secret_basic",
     },
   };
   const prevGrantConfig = (await pluginStore.get({ key: 'grant' })) || {};
