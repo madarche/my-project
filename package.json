@@ -20,7 +20,7 @@
     "strapi-plugin-email": "3.1.1",
     "strapi-plugin-upload": "3.1.1",
     "strapi-connector-bookshelf": "3.1.1",
-    "knex": "<0.20.0",
+    "knex": "<2.5.0",
     "sqlite3": "latest"
   },
   "author": {
